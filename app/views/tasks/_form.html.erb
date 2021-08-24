@@ -1,0 +1,39 @@
+<div align="center">
+<%= form_for(@task) do |f| %>
+  <div class="field">
+    <%= f.label :title %><br/>
+    <%= f.text_field :title,  autofocus: true ,autocomplete: "Title " %>
+    <%= f.hidden_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Description%><br/>
+    <%= f.text_area :description, autofocus: true ,autocomplete: "Description" %>
+  </div>
+
+  <div class="field"> 
+    <%= f.label :company_name %><br/> 
+    <%= f.text_field :company_name,autofocus: true ,autocomplete: "Company Name" %> 
+  </div>
+
+  <div class="field">
+    <%= f.label :location %><br/>
+    <%= f.text_field :location, autofocus: true ,autocomplete: "Location" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :estimated_date %><br/>
+    <%= f.datetime_local_field :estimated_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category %><br/>
+    <%= f.select(:category_id, options_for_categories)%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add-task" %>
+  </div>
+
+<% end %>
+</div>

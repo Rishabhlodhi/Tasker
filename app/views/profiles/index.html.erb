@@ -1,0 +1,22 @@
+<div align="center">
+
+<strong> Enter your details </strong>
+
+<%= form_with model: @profile do |form| %>
+  <div class="field">
+    <%= form.label :'Profile Picture' %>
+    <%= form.file_field  :dp %><br><br>
+  </div>
+
+  <div class="field">
+    <%= form.label :'Date of birth' %>
+    <%= form.date_field  :birth_date %><br><br>
+  </div>
+
+  <div class="field">
+    <%= form.label :Address %> 
+    <%= form.text_area :address %><br/><br/>
+  </div>
+    <%= form.submit %>
+<% end %>
+</div>
