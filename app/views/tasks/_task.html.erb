@@ -1,0 +1,31 @@
+<div align="center">
+ <% task.reverse.each do |task| %>
+  <div>
+    <div>
+     <div class="navbar-nav ml-auto">
+
+      <div class="nav-item">
+        <b>Title:</b><%= link_to task.title ,task_path(task)%><br/><br/>
+      </div>
+
+      <div class="nav-item">
+       <h4>Description:</h4><%= truncate(task.description, length: 60) %><br/>
+      </div>
+
+      <div class="nav-item">
+       <b>Company_name:</b><%= truncate(task.company_name,length: 60) %><br/>
+      </li class="nav-item">
+
+      <div class="nav-item">
+        <b>Category:</b><%= task.category.name %><br/>
+      </div>
+
+      <div class="nav-item">
+        <%= link_to 'moreInfo........' ,task_path(task) ,class:'nav-link'%>
+      </div>
+
+     </div><hr>
+    </div>
+  </div>
+ <% end %>
+</div> 

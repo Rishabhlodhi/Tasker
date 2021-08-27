@@ -1,0 +1,22 @@
+<div align="center">
+<h3>Add New Categories</h3>	
+	<%= form_with model: @category do |f| %>
+	  <div>
+	    <%= f.label :name %><br>
+	    <%= f.text_field :name %><br/><br/>
+	  </div>
+
+	  <div>
+	    <%= f.submit %>
+	  </div>
+	<% end %>
+	<h4> <%= link_to "Back", tasks_path %></h4>
+</div><hr>
+
+<div align="center">
+  <b>Categories :</b> 
+  <% Category.all.each do |category| %>
+    <%= link_to category.name, tasks_path(category: category.name) %>
+    <%= link_to 'Destroy' ,category_path(category),method: :delete, data:{ confirm: 'are you sure?' , remote: true}, class: "delete"%><br/>
+  <% end %>
+</div>

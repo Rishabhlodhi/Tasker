@@ -1,8 +1,13 @@
-<div align="center">
 
-  <marquee class="field">Welcome to Categories</marquee>	
-  <b class="field">Categories:</b> 
-	<% Category.all.each do |category| %>
-	<%= link_to "#{category.name}", tasks_path(category: category.name)%>
-  <%end%>
+<div align="center">
+  <h4 class="field">Welcome to Tasker Your task is here</h4><br/> 
+    <b>Categories :</b> 
+      <%#byebug%>
+      <% Category.all.each do |category| %>
+      <%= link_to category.name, tasks_path(category: category.name) %>
+    <% end %><hr>
 </div>  
+
+<%= will_paginate @tasks %>
+<%= render "task", task: @tasks %>
+<%= will_paginate @tasks %>

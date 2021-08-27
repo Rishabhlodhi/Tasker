@@ -1,5 +1,5 @@
 <div align="center">
-<%= form_for(@task) do |f| %>
+<%= form_with model: @task do |f| %>
   <div class="field">
     <%= f.label :title %><br/>
     <%= f.text_field :title,  autofocus: true ,autocomplete: "Title " %>

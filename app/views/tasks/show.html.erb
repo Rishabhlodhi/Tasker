@@ -1,0 +1,57 @@
+  <%= will_paginate  @user_tasks%>
+  
+  <div>
+    <div>
+     <ul class="navbar-nav ml-auto">
+      <div align="center" id="hide">
+        <b>Task by:<%=@task.user.name%></b>
+      </div>
+      
+      <li class="nav-item">
+        <b>Title:</b><%= @task.title %>
+      </li>
+
+      <li class="nav-item">
+       <div align="center">
+         <h4>Description:</h4>
+       </div>  
+          <p><%= simple_format(@task.description) %> </p>
+      </li>
+
+      <li class="nav-item">
+         <b>Company_name:<%= @task.company_name%> </b>
+      </li class="nav-item">
+
+      <li>
+        <b>Location:</b><%= @task.location%><br/>
+      </li>
+
+      <li class="nav-item">
+        <b>Estimated_date</b><%= @task.estimated_date.strftime("%b %d. %Y")%><br/>
+      </li>
+
+      <li class="nav-item">
+        <b>Category:</b><%= @task.category.name %>
+      </li>
+
+      <% if can? :update ,@task %>
+      <li class="nav-item">
+        <%=link_to 'Edit-task', edit_task_path(@task), class:'nav-link' %>
+      </li>
+      <% end %>
+
+      <% if can? :destroy ,@task %>
+      <li class="nav-item">
+        <%= link_to 'Delete-task',task_path(@task), method: :delete, data: { confirm: 'Are you sure?' } ,class:'nav-link' %>
+      </li>
+
+      <% end %>
+     </ul><hr>
+    </div>
+  </div> 
+
+  <h4 align="center">
+    <%= link_to 'Go-home', tasks_path %>
+  </h4>
+</div>
+<%= will_paginate  @user_tasks%>

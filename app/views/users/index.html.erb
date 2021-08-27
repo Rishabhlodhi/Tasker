@@ -1,0 +1,42 @@
+<%= will_paginate  @users%>
+<div align="center">
+  <h4 class="field" align="center">Welcome to Tasker </h4><br/>
+  <% @users.reverse.each do |user| %>
+    <div>
+      
+    <div>
+     <ul class="navbar-nav ml-auto">
+
+      <li class="nav-item">
+        <b>User_Name:</b><%=link_to user.name , user_path(user) %><br/><br/>
+      </li>
+
+      <li class="nav-item"> 
+         <b>User_Role:</b><%= user.role %><br/><br/>
+      </li>
+      
+
+      <li class="nav-item"> 
+       <b>No_of_task:</b><%= pluralize(user.tasks.count, "") if user.tasks %><br/><br/>
+      </li>
+     
+
+      <% if can? :destroy ,@user %>
+       <li class="nav-item"> 
+         <%= link_to "Delete user", user_path(user), method: :delete, data: {confirm: "user deleted"},class:'nav-link' %><br/>
+      </li>
+      <%end%>
+
+       <li class="nav-item">
+        <%= link_to 'UserMoreInfo........' ,user_path(user) ,class:'nav-link'%>
+      </li>
+    
+  </ul><hr>
+  </div>
+</div>
+<% end %>
+    <h4 align="center">
+      <%= link_to 'Go-home', users_path %>
+    </h4>
+</div>
+<%= will_paginate  @users%>

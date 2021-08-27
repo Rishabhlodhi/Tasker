@@ -2,10 +2,10 @@
 
 <strong> Enter your details </strong>
 
-<%= form_with model: @profile do |form| %>
+<%= form_for @profile do |form| %>
   <div class="field">
-    <%= form.label :'Profile Picture' %>
-    <%= form.file_field  :dp %><br><br>
+    <%= form.label :'Profile picture' %>
+    <%= form.file_field  :image %><br><br>
   </div>
 
   <div class="field">
