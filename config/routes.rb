@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :profiles
   resources :tasks 
-  resources :users
   resources :categories
+  resources :users
 
 end
 

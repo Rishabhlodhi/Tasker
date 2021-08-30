@@ -1,0 +1,35 @@
+<center>
+  <h4 style="color: green">
+    <%byebug%>
+    <%=p "Contact Information of the #{@task.title}"%>
+  </h4>
+  <h4>
+      <strong>Email:</strong>
+      <%= @task.user.email %>
+    </h4>
+
+    <h4>
+      <strong>Name:</strong>
+      <%= @task.user.name %>
+    </h4>
+
+    <h4>
+      <strong>Role:</strong>
+      <%= @task.user.role %>
+    </h4>
+
+    <h4>
+      <strong>Address:</strong>
+      <i><%= @task.user.address %></i>
+    </h4>
+      
+    <h4>
+      <strong>Contact no:</strong>
+      <%= @task.user.phone %>
+    </h4>
+
+  <h4>
+    <%=link_to 'Go Back', task_path%>
+  </h4>
+
+</center>    
