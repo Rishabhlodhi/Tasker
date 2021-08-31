@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.destroy
       redirect_to '/users'
     end
-      flash[:notice] = 'Something wrong'
+      flash[:notice] = 'Something wrong '
   end
 
   def user_params
