@@ -249,6 +249,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   sqlite3 (~> 1.4)
+  pg
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
